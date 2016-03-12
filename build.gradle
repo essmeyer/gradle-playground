@@ -18,12 +18,12 @@ subprojects {
 	}
 	
 	dependencies {
-		compile 'org.slf4j:slf4j-api:1.7.+'
+		compile 'org.slf4j:slf4j-api:1.+'
 		testCompile 'junit:junit:4.+'
 	}
 
 	jacoco {
-		toolVersion = "0.7.1.201405082137"
+		toolVersion = "+"
 		reportsDir = file("$buildDir/customJacocoReportDir")
 	}
 	

@@ -1,0 +1,115 @@
+{
+    "compile": {
+        "de.cronn.gradle.playground:db": {
+            "firstLevelTransitive": [
+                "de.cronn.gradle.playground:service"
+            ],
+            "project": true
+        },
+        "de.cronn.gradle.playground:service": {
+            "project": true
+        },
+        "org.slf4j:slf4j-api": {
+            "firstLevelTransitive": [
+                "de.cronn.gradle.playground:db",
+                "de.cronn.gradle.playground:service"
+            ],
+            "locked": "1.7.18",
+            "requested": "1.+"
+        }
+    },
+    "default": {
+        "de.cronn.gradle.playground:db": {
+            "firstLevelTransitive": [
+                "de.cronn.gradle.playground:service"
+            ],
+            "project": true
+        },
+        "de.cronn.gradle.playground:service": {
+            "project": true
+        },
+        "org.slf4j:slf4j-api": {
+            "firstLevelTransitive": [
+                "de.cronn.gradle.playground:db",
+                "de.cronn.gradle.playground:service"
+            ],
+            "locked": "1.7.18",
+            "requested": "1.+"
+        }
+    },
+    "jacocoAgent": {
+        "org.jacoco:org.jacoco.agent": {
+            "locked": "0.7.6.201602180812"
+        }
+    },
+    "jacocoAnt": {
+        "org.jacoco:org.jacoco.ant": {
+            "locked": "0.7.6.201602180812"
+        }
+    },
+    "runtime": {
+        "de.cronn.gradle.playground:db": {
+            "firstLevelTransitive": [
+                "de.cronn.gradle.playground:service"
+            ],
+            "project": true
+        },
+        "de.cronn.gradle.playground:service": {
+            "project": true
+        },
+        "org.slf4j:slf4j-api": {
+            "firstLevelTransitive": [
+                "de.cronn.gradle.playground:db",
+                "de.cronn.gradle.playground:service"
+            ],
+            "locked": "1.7.18",
+            "requested": "1.+"
+        }
+    },
+    "testCompile": {
+        "de.cronn.gradle.playground:db": {
+            "firstLevelTransitive": [
+                "de.cronn.gradle.playground:service"
+            ],
+            "project": true
+        },
+        "de.cronn.gradle.playground:service": {
+            "project": true
+        },
+        "junit:junit": {
+            "locked": "4.12",
+            "requested": "4.+"
+        },
+        "org.slf4j:slf4j-api": {
+            "firstLevelTransitive": [
+                "de.cronn.gradle.playground:db",
+                "de.cronn.gradle.playground:service"
+            ],
+            "locked": "1.7.18",
+            "requested": "1.+"
+        }
+    },
+    "testRuntime": {
+        "de.cronn.gradle.playground:db": {
+            "firstLevelTransitive": [
+                "de.cronn.gradle.playground:service"
+            ],
+            "project": true
+        },
+        "de.cronn.gradle.playground:service": {
+            "project": true
+        },
+        "junit:junit": {
+            "locked": "4.12",
+            "requested": "4.+"
+        },
+        "org.slf4j:slf4j-api": {
+            "firstLevelTransitive": [
+                "de.cronn.gradle.playground:db",
+                "de.cronn.gradle.playground:service"
+            ],
+            "locked": "1.7.18",
+            "requested": "1.+"
+        }
+    }
+}
