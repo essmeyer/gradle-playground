@@ -1,0 +1,37 @@
+plugins {
+	id 'nebula.dependency-lock' version '4.2.0'
+}
+
+allprojects {
+    apply plugin: 'java'
+    group = 'de.cronn.gradle.playground'
+    version = '1.0'
+
+	apply plugin: 'nebula.dependency-lock'
+}
+
+subprojects {
+    apply plugin: 'jacoco'
+	
+	repositories {
+		jcenter()
+	}
+	
+	dependencies {
+		compile 'org.slf4j:slf4j-api:1.7.+'
+		testCompile 'junit:junit:4.+'
+	}
+
+	jacoco {
+		toolVersion = "0.7.1.201405082137"
+		reportsDir = file("$buildDir/customJacocoReportDir")
+	}
+	
+	jacocoTestReport {
+		reports {
+			xml.enabled false
+			csv.enabled false
+			html.destination "${buildDir}/jacocoHtml"
+		}
+	}
+}
