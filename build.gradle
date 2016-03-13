@@ -40,4 +40,11 @@ subprojects {
 			html.destination "${buildDir}/jacocoHtml"
 		}
 	}
+	
+	sonarqube {
+    	properties {
+      		property "sonar.jacoco.reportPath", "${buildDir}/jacoco/test.exec"
+      		property "sonar.jacoco.itReportPath", "${buildDir}/jacoco/integrationTest.exec"
+    	}
+    }
 }
