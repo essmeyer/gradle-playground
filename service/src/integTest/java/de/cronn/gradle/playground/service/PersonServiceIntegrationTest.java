@@ -18,6 +18,8 @@ public class PersonServiceIntegrationTest {
 	@Test
 	public void testDelete() {
 		PersonService classUnderTest = new PersonServiceInMemoryImpl().add(new Person("Essmeyer"));
-		assertNotNull(classUnderTest.delete("Essmeyer"));
+		Person deletedPerson = classUnderTest.delete("Essmeyer");
+		assertNotNull(deletedPerson);
+		assertNotNull(deletedPerson.getFirstNames());
 	}
 }
