@@ -8,30 +8,36 @@ apply plugin: 'org.sonarqube'
 
 allprojects {
     apply plugin: 'java'
+    apply plugin: 'jacoco'
     group = 'de.cronn.gradle.playground'
     version = '1.0'
 
 	apply plugin: 'nebula.dependency-lock'
 	apply plugin: 'nebula.integtest'
-}
-
-
-subprojects {
-    apply plugin: 'jacoco'
 	
+	jacoco {
+		toolVersion = "0.7.+"
+		reportsDir = file("$buildDir/customJacocoReportDir")
+	}
 	repositories {
 		jcenter()
 	}
+
+}
+
+task jacocoMerge(type: JacocoMerge) {
+	executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/test.exec")
+}
+
+subprojects {
+	
 	
 	dependencies {
 		compile 'org.slf4j:slf4j-api:1.+'
 		testCompile 'junit:junit:4.+'
 	}
 
-	jacoco {
-		toolVersion = "0.7.+"
-		reportsDir = file("$buildDir/customJacocoReportDir")
-	}
+
 	
 	jacocoTestReport {
 		reports {
@@ -44,7 +50,7 @@ subprojects {
 	sonarqube {
     	properties {
       		property "sonar.jacoco.reportPath", "${buildDir}/jacoco/test.exec"
-      		property "sonar.jacoco.itReportPath", "${buildDir}/jacoco/integrationTest.exec"
+      		property "sonar.jacoco.itReportPath", "${rootProject.buildDir}/jacoco/jacocoMerge.exec"
     	}
     }
 }
